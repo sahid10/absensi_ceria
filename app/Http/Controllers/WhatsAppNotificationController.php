@@ -21,7 +21,7 @@ class WhatsAppNotificationController extends Controller
             CURLOPT_CUSTOMREQUEST => 'POST',
             CURLOPT_POSTFIELDS => array(
                 'target' => '120363337218399580@g.us', // Masukkan ID grup WhatsApp di sini
-                'message' => 'cek',
+                'message' => $message,
             ),
             CURLOPT_HTTPHEADER => array(
                 'Authorization: hT2Do8hSDN3fy5LZ2rSW', // Ganti 'TOKEN' dengan token API Fonnte Anda
