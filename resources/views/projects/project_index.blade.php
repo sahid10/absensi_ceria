@@ -31,30 +31,32 @@
                 <table class="table align-items-center mb-0">
                   <thead>
                     <tr>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Tanggal</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">jam_berangkat</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">jenis_kontrak_kerja</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nama_project</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nama_leader</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">wilayah_ulp_terkait</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">nama_personil</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">total_jumlah_personil</th>
-                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Aksi</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">No</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Tanggal</th>
+                      <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jam</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Jenis Kontrak</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Project</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Leader</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Wilayah</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Personil</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">jml Personil</th>
+                      <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Aksi</th>
                       <th class="text-secondary opacity-7"></th>
                     </tr>
                   </thead>
                   <tbody>
-                  @foreach ($projects as $project)
+                  @foreach ($projects as $index=>$project)
                   <tr>
-                    <td class="text-center align-middle">{{ $project->tanggal }}</td>
-                    <td class="text-center align-middle">{{ $project->jam_berangkat }}</td>
-                    <td class="text-center align-middle">{{ $project->jenis_kontrak_kerja }}</td>
-                    <td class="text-center align-middle">{{ $project->nama_project }}</td>
-                    <td class="text-center align-middle">{{ $project->nama_leader }}</td>
-                    <td class="text-center align-middle">{{ $project->wilayah_ulp_terkait }}</td>
-                    <td class="text-center align-middle">{{ $project->nama_personil }}</td>
-                    <td class="text-center align-middle">{{ $project->total_jumlah_personil }}</td>
-                    <td class="text-center">
+                    <td class="text-xs font-weight-bold mb-0">{{ $index + 1 }}</td> <!-- Menampilkan nomor urut -->
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->tanggal }}</td>
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->jam_berangkat }}</td>
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->jenis_kontrak_kerja }}</td>
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->nama_project }}</td>
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->nama_leader }}</td>
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->wilayah_ulp_terkait }}</td>
+                    <td class="text-xs font-weight-bold mb-0">{{ $project->nama_personil }}</td>
+                    <td class="text-center text-xs font-weight-bold mb-0">{{ $project->total_jumlah_personil }}</td>
+                    <td class="text-xs font-weight-bold mb-0">
                     <!-- Button Aksi Edit -->
                     <a href="{{ route('projects.send_wa', $project->id) }}" class="btn btn-primary btn-sm">
         Kirim WA
@@ -69,11 +71,7 @@
         </div>
       </div>
     </div>
-<br></br>
-<form action="{{ route('send.whatsapp.notification') }}" method="POST">
-  @csrf
-  <button type="submit" class="btn btn-primary">Kirim Notifikasi Group</button>
-</form>
+<br>
 
 
   </div>
