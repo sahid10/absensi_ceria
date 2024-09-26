@@ -21,11 +21,11 @@
   </li>
 
   <li class="nav-item">
-    <a class="nav-link text-white {{ Request::is('karyawan') ? 'active bg-gradient-primary' : '' }}" href="{{url('karyawan')}}">
+    <a class="nav-link text-white {{ Request::is('Pegawai') ? 'active bg-gradient-primary' : '' }}" href="{{url('Pegawai')}}">
       <div class="text-white text-center me-2 d-flex align-items-center justify-content-center">
         <i class="material-icons opacity-10">person_add</i>
       </div>
-      <span class="nav-link-text ms-1">Karyawan</span>
+      <span class="nav-link-text ms-1">Pegawai</span>
     </a>
   </li>
 

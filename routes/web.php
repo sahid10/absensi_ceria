@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Counter;
 use App\Http\Controllers\WhatsAppNotificationController;
 use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\KaryawanController;
+use App\Http\Controllers\PegawaiController;
+use App\Http\Controllers\AbsensiController;
 
 
 // -------------------------------------------------------------post-------------------------------------------------------------
@@ -20,12 +21,15 @@ Route::post('/projects', [ProjectController::class, 'store'])->name('projects.st
 Route::get('/', function () {
     return view('dashboard');});
 
+// Absensi
+Route::get('/absensi', [AbsensiController::class, 'index'])->name('Absensi.Absensi_index');
+
 //Project
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.project_index');
 
-//Karyawan
-Route::get('/karyawan', [KaryawanController::class, 'index'])->name('karyawan.karyawan_index');
+//Pegawai
+Route::get('/Pegawai', [PegawaiController::class, 'index'])->name('Pegawai.Pegawai_index');
     
 Route::get('/inventory', function () {
     return view('inventory.inventory_index');});

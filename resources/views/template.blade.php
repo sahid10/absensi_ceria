@@ -23,6 +23,10 @@
   <title>
     Material Dashboard 2 by Creative Tim
   </title>
+
+  <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+  <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script> -->
+
   <!--     Fonts and icons     -->
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
   <!-- Nucleo Icons -->
@@ -557,6 +561,24 @@
   <script async defer src="https://buttons.github.io/buttons.js"></script>
   <!-- Control Center for Material Dashboard: parallax effects, scripts for the example pages etc -->
   <script src="../assets/js/material-dashboard.min.js?v=3.1.0"></script>
+
+  <script>
+    $(document).ready(function() {
+        $('#pegawaiTable').DataTable({
+            "language": {
+                "search": "Cari:",
+                "lengthMenu": "Tampilkan _MENU_ data per halaman",
+                "zeroRecords": "Tidak ada data yang ditemukan",
+                "info": "Menampilkan halaman _PAGE_ dari _PAGES_",
+                "infoEmpty": "Tidak ada data tersedia",
+                "infoFiltered": "(difilter dari total _MAX_ data)"
+            },
+            "pageLength": 5, // Batasi jumlah data per halaman
+            "order": [[ 0, "desc" ]] // Mengurutkan data berdasarkan kolom pertama (No) secara descending
+        });
+    });
+</script>
+
 </body>
 
 </html>
