@@ -9,10 +9,13 @@ class Pegawai extends Model
 {
     use HasFactory;
 
-    protected $connection = 'workbench'; 
+    // protected $connection = 'workbench'; 
+    protected $connection = 'fin_pro'; // Koneksi database yang digunakan
+    
     // Tentukan tabel yang digunakan jika tidak mengikuti konvensi nama tabel
     protected $table = 'pegawai';
 
     // Tentukan kolom yang dapat diisi
     protected $fillable = ['pegawai_nama', 'pegawai_status', 'alamat', 'jabatan'];
+
 }

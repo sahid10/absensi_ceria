@@ -9,6 +9,7 @@ class Att_log extends Model
 {
     use HasFactory;
 
-    protected $connection = 'workbench';  // Koneksi ke database kedua
+    // protected $connection = 'workbench';  // Koneksi ke database kedua
+    protected $connection = 'fin_pro';  // Koneksi ke database kedua
     protected $table = 'att_log'; 
 }

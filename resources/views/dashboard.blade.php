@@ -482,4 +482,4 @@
       </div>
     </div>
   <!-- end content -->
-  @endsection
+@endsection

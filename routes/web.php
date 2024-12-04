@@ -6,13 +6,13 @@ use App\Http\Controllers\WhatsAppNotificationController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\AbsensiController;
-
+use App\Http\Controllers\InventoryController;
 
 // -------------------------------------------------------------post-------------------------------------------------------------
 // Route::post('/send-notification', [WhatsAppNotificationController::class, 'sendNotification'])->name('send.whatsapp.notification');
 Route::post('/projects', [ProjectController::class, 'store'])->name('projects.store');
 
-
+Route::post('inventory', [InventoryController::class, 'store'])->name('inventory.store');
 
 
 
@@ -28,11 +28,15 @@ Route::get('/absensi', [AbsensiController::class, 'index'])->name('Absensi.Absen
 Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.project_index');
 
+//Inventory
+Route::get('/Inventory', [InventoryController::class, 'index'])->name('Inventory.Inventory_index');
+Route::get('/Inventory/show', [InventoryController::class, 'show'])->name('inventory.show');
+Route::get('/inventory/create', [InventoryController::class, 'create'])->name('inventory.create');
+
 //Pegawai
 Route::get('/Pegawai', [PegawaiController::class, 'index'])->name('Pegawai.Pegawai_index');
-    
-Route::get('/inventory', function () {
-    return view('inventory.inventory_index');});
+Route::get('/Pegawai/download-pdf', [PegawaiController::class, 'downloadPdf'])->name('Pegawai.download-pdf');
+
 
 Route::get('profile', function () {
     return view('profile');});
@@ -49,4 +53,6 @@ Route::get('notifikasi', function () {
 Route::get('/counter', Counter::class);
 
 Route::get('/projects/send-wa/{id}', [ProjectController::class, 'sendWa'])->name('projects.send_wa');
+
+
 
